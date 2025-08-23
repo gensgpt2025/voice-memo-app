@@ -75,8 +75,8 @@ class MemoApp {
             });
             
             await gapi.client.init({
-                apiKey: 'YOUR_API_KEY', // 後で設定
-                clientId: 'YOUR_CLIENT_ID.apps.googleusercontent.com', // 後で設定
+                apiKey: 'AIzaSyABi1BUCvlp_1hxanBg7G-G1ts3v5czo90',
+                clientId: '602143559288-joejq252qa3fi48lg8c56fg527gqdrbh.apps.googleusercontent.com',
                 discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
                 scope: 'https://www.googleapis.com/auth/spreadsheets'
             });
