@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音声メモアプリ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎤 音声メモ</h1>
+            <div class="auth-section">
+                <button id="loginBtn" class="btn btn-outline">Googleログイン</button>
+                <span id="userInfo" class="user-info hidden"></span>
+            </div>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="input-buttons">
+                    <button id="voiceBtn" class="btn btn-voice" disabled>
+                        🎤 音声入力
+                    </button>
+                    <button id="textBtn" class="btn btn-text active">
+                        ⌨️ テキスト入力
+                    </button>
+                </div>
+                
+                <div class="memo-input">
+                    <textarea id="memoText" placeholder="ここにメモを入力してください..." rows="6"></textarea>
+                    <div id="voiceStatus" class="voice-status hidden">
+                        <div class="recording-indicator">🔴 録音中...</div>
+                    </div>
+                </div>
+
+                <div class="tag-section">
+                    <label for="tagSelect">タグ:</label>
+                    <select id="tagSelect">
+                        <option value="メモ">📝 メモ</option>
+                        <option value="日記">📔 日記</option>
+                    </select>
+                    <button id="addTagBtn" class="btn btn-small">+ タグ追加</button>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="saveBtn" class="btn btn-primary" disabled>
+                        💾 保存
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        🗑️ クリア
+                    </button>
+                </div>
+            </div>
+
+            <div class="status-section">
+                <div id="statusMessage" class="status-message"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- タグ追加モーダル -->
+    <div id="tagModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>新しいタグを追加</h3>
+            <input type="text" id="newTagInput" placeholder="タグ名を入力">
+            <div class="modal-buttons">
+                <button id="confirmTagBtn" class="btn btn-primary">追加</button>
+                <button id="cancelTagBtn" class="btn btn-secondary">キャンセル</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
