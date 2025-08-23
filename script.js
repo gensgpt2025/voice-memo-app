@@ -75,8 +75,8 @@ class MemoApp {
             });
             
             await gapi.client.init({
-                apiKey: 'AIzaSyABi1BUCvlp_1hxanBg7G-G1ts3v5czo90',
-                clientId: '602143559288-joejq252qa3fi48lg8c56fg527gqdrbh.apps.googleusercontent.com',
+                apiKey: window.APP_CONFIG?.GOOGLE_API_KEY || 'YOUR_API_KEY_HERE',
+                clientId: window.APP_CONFIG?.GOOGLE_CLIENT_ID || 'YOUR_CLIENT_ID_HERE',
                 discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
                 scope: 'https://www.googleapis.com/auth/spreadsheets'
             });
@@ -86,7 +86,8 @@ class MemoApp {
             
         } catch (error) {
             console.error('Google API初期化エラー:', error);
-            this.showMessage('Google API の初期化に失敗しました', 'error');
+            console.log('詳細エラー:', error.details || error.message);
+            this.showMessage('Google API の初期化に失敗しました: ' + (error.message || error), 'error');
         }
     }
 

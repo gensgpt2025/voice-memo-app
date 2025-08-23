@@ -1,0 +1,7 @@
+# セキュリティのため設定ファイルを除外
+config.js
+
+# その他の除外ファイル
+node_modules/
+.DS_Store
+*.log
