@@ -87,13 +87,13 @@ class MemoApp {
             });
             
             await gapi.client.init({
-                apiKey: 'AIzaSyC4gcw9yAjdByZJpC_Nga56jsl7LrPb_oE',
+                apiKey: window.APP_CONFIG?.GOOGLE_API_KEY || 'AIzaSyC4gcw9yAjdByZJpC_Nga56jsl7LrPb_oE',
                 discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4']
             });
             
             // Google Identity Services初期化
             google.accounts.id.initialize({
-                client_id: '602143559288-cbm0nfgsu8tqkq50dtcg6fn3ps6f2j50.apps.googleusercontent.com',
+                client_id: window.APP_CONFIG?.GOOGLE_CLIENT_ID || '602143559288-cbm0nfgsu8tqkq50dtcg6fn3ps6f2j50.apps.googleusercontent.com',
                 callback: this.handleCredentialResponse.bind(this),
                 cancel_on_tap_outside: false
             });
