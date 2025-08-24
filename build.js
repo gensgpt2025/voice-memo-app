@@ -15,16 +15,10 @@ const apiKey = process.env.GOOGLE_API_KEY || 'YOUR_API_KEY_HERE';
 const clientId = process.env.GOOGLE_CLIENT_ID || 'YOUR_CLIENT_ID_HERE';
 
 scriptContent = scriptContent.replace(
-    /window\.APP_CONFIG\?\.GOOGLE_API_KEY \|\| 'AIzaSyC4gcw9yAjdByZJpC_Nga56jsl7LrPb_oE'/g,
-    `'${apiKey}'`
+    /apiKey: window\.APP_CONFIG\?\.GOOGLE_API_KEY \|\| 'AIzaSyC4gcw9yAjdByZJpC_Nga56jsl7LrPb_oE'/g,
+    `apiKey: '${apiKey}'`
 );
 
-scriptContent = scriptContent.replace(
-    /window\.APP_CONFIG\?\.GOOGLE_CLIENT_ID \|\| '602143559288-cbm0nfgsu8tqkq50dtcg6fn3ps6f2j50\.apps\.googleusercontent\.com'/g,
-    `'${clientId}'`
-);
-
-// OAuth初期化部分も置換
 scriptContent = scriptContent.replace(
     /client_id: window\.APP_CONFIG\?\.GOOGLE_CLIENT_ID \|\| '602143559288-cbm0nfgsu8tqkq50dtcg6fn3ps6f2j50\.apps\.googleusercontent\.com'/g,
     `client_id: '${clientId}'`
