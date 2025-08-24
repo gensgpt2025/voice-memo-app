@@ -1,5 +1,5 @@
 # セキュリティのため設定ファイルを除外
-config.js
+# config.js
 
 # その他の除外ファイル
 node_modules/
