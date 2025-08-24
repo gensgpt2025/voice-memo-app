@@ -77,6 +77,12 @@ class MemoApp {
             console.log('API Key available:', window.APP_CONFIG?.GOOGLE_API_KEY ? 'Yes' : 'No');
             console.log('Client ID available:', window.APP_CONFIG?.GOOGLE_CLIENT_ID ? 'Yes' : 'No');
             
+            // Google APIライブラリが読み込まれるまで待機
+            while (typeof gapi === 'undefined' || typeof google === 'undefined') {
+                console.log('Waiting for Google APIs to load...');
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+            
             if (!window.APP_CONFIG?.GOOGLE_API_KEY || !window.APP_CONFIG?.GOOGLE_CLIENT_ID) {
                 throw new Error('APIキーまたはクライアントIDが設定されていません。config.jsを確認してください。');
             }
