@@ -93,9 +93,11 @@ class MemoApp {
             });
             
             await gapi.client.init({
-                apiKey: window.APP_CONFIG?.GOOGLE_API_KEY || 'AIzaSyC4gcw9yAjdByZJpC_Nga56jsl7LrPb_oE',
-                discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4']
+                apiKey: window.APP_CONFIG?.GOOGLE_API_KEY || 'AIzaSyC4gcw9yAjdByZJpC_Nga56jsl7LrPb_oE'
             });
+            
+            // Google Sheets API Discovery Document を手動で読み込み
+            await gapi.client.load('sheets', 'v4');
             
             // Google Identity Services初期化
             google.accounts.id.initialize({
