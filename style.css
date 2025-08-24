@@ -170,6 +170,44 @@ main {
     100% { opacity: 1; }
 }
 
+/* 音声コマンド情報 */
+.voice-commands-info {
+    margin-bottom: 15px;
+}
+
+.voice-commands-info summary {
+    cursor: pointer;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #495057;
+    outline: none;
+}
+
+.voice-commands-info summary:hover {
+    background: #e9ecef;
+}
+
+.commands-list {
+    padding: 12px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    font-size: 14px;
+}
+
+.commands-list p {
+    margin: 4px 0;
+    color: #6c757d;
+}
+
+.commands-list strong {
+    color: #495057;
+}
+
 /* タグセクション */
 .tag-section {
     display: flex;
@@ -208,6 +246,28 @@ main {
     text-align: center;
     font-weight: 500;
     margin-top: 10px;
+}
+
+
+/* スプレッドシートリンク */
+.spreadsheet-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.spreadsheet-link .btn {
+    background: #34A853;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.spreadsheet-link .btn:hover {
+    background: #2d8e47;
+    transform: translateY(-1px);
 }
 
 .status-message.success {
